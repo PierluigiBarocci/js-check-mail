@@ -9,12 +9,24 @@ var mail = ['pier', 'claudio', 'marisa', 'michela','ares', 'sofia', 'luca', 'ald
 console.log(mail);
 // creazione prompt
 var nome = prompt('Inserisci il tuo nome account perfavore');
-console.log(nome);
 
-//scorriamo attraverso l'Array
+// // la funzione .includes() fa proprio quello di cui abbiamo bisogno: guarda se il soggetto-array a cui si riferisce, in questo caso mail, include il valore tra parentesi (nel nostro caso, il nome scritto attraverso il prompt)
 
-if (mail.includes(nome)) {
-    console.log('benvenuto');
-} else {
-    console.log('mi dispiace, non sei in lista');
+// if (mail.includes(nome)) {
+//     console.log('benvenuto');
+// } else {
+//     console.log('mi dispiace, non sei in lista');
+// }
+
+// Stessa soluzione, ma utilizzando un ciclo for
+
+for (var i = 0; i < mail.length; i++) {
+    if (nome == mail[i]) {
+        console.log('ok, benvenuto');
+        i = mail.length;
+        var n = true;
+    }
+}
+if (!n) {
+    console.log('vattene');
 }
